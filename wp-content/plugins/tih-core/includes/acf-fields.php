@@ -86,6 +86,27 @@ function tih_register_acf_fields(): void {
                 'instructions'  => 'Select the island(s) this article is primarily about.',
                 'required'      => 1,
             ],
+            [
+                'key'          => 'field_product_name_jp',
+                'label'        => '商品名（日本語）',
+                'name'         => 'product_name_jp',
+                'type'         => 'text',
+                'instructions' => '記事に関連する日本語の商品名（Buyee検索ガイド用）',
+            ],
+            [
+                'key'          => 'field_buyee_keyword',
+                'label'        => 'Buyee検索キーワード',
+                'name'         => 'buyee_keyword',
+                'type'         => 'text',
+                'instructions' => 'Buyee/Rakutenで検索する日本語キーワード（コピーボタンで使用）',
+            ],
+            [
+                'key'          => 'field_price_guide',
+                'label'        => '参考価格帯',
+                'name'         => 'price_guide',
+                'type'         => 'text',
+                'instructions' => '参考価格帯（例: ¥2,500–¥3,500）',
+            ],
         ],
         'location' => [
             [ [ 'param' => 'post_type', 'operator' => '==', 'value' => 'treasures' ] ],
