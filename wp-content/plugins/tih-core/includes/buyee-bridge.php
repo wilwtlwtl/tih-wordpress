@@ -30,6 +30,15 @@ function tih_render_buyee_bridge( array $atts = [], ?string $inner = null ): str
     $price_yen  = get_field( 'price_yen',       $post_id );
     $visual     = get_field( 'visual_id_guide', $post_id );
     $buyee_url  = get_field( 'buyee_url',       $post_id );
+    $rare_stock = (bool) get_field( 'rare_stock', $post_id );
+
+    // Auto-flag craft category products as rare if field not explicitly set
+    if ( ! $rare_stock ) {
+        $terms = wp_get_post_terms( $post_id, 'theme_category' );
+        if ( ! empty( $terms ) && ! is_wp_error( $terms ) && $terms[0]->slug === 'craft' ) {
+            $rare_stock = true;
+        }
+    }
 
     if ( ! $jp_keyword ) {
         return '';
@@ -86,6 +95,14 @@ function tih_render_buyee_bridge( array $atts = [], ?string $inner = null ): str
             target="_blank"
             rel="noopener noreferrer"
         >🛍️ Find on Buyee / Rakuten</a>
+
+        <?php if ( $rare_stock ) : ?>
+        <div class="tih-buyee-bridge__rare">
+            <span aria-hidden="true">⚠️</span>
+            <strong>Limited stock — verify availability</strong> before purchasing.
+            Niijima glass and rare island spirits sell out without notice.
+        </div>
+        <?php endif; ?>
 
         <p class="tih-buyee-bridge__tip">
             <span aria-hidden="true">🌐</span>
@@ -224,6 +241,18 @@ function tih_buyee_bridge_footer_js(): void {
     color: #888;
     margin-left: .3rem;
 }
+.tih-buyee-bridge__rare {
+    background: #fff3cd;
+    border: 1px solid #f39c12;
+    border-radius: 4px;
+    padding: .6rem .9rem;
+    font-size: .85rem;
+    margin-bottom: .75rem;
+    display: flex;
+    gap: .5rem;
+    align-items: flex-start;
+}
+.tih-buyee-bridge__rare strong { color: #c0392b; }
 .tih-buyee-bridge__tip {
     font-size: .85rem;
     color: #555;

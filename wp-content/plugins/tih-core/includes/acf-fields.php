@@ -149,6 +149,15 @@ function tih_register_acf_fields(): void {
                 'type'         => 'url',
                 'instructions' => 'Direct product URL. Leave blank to auto-generate a keyword search link.',
             ],
+            [
+                'key'          => 'field_rare_stock',
+                'label'        => 'Rare / Limited Stock Warning',
+                'name'         => 'rare_stock',
+                'type'         => 'true_false',
+                'instructions' => 'Show "Limited stock — verify availability" badge on the Buyee Bridge.',
+                'default_value' => 0,
+                'ui'           => 1,
+            ],
         ],
         'location' => [
             [ [ 'param' => 'post_type', 'operator' => '==', 'value' => 'products' ] ],
