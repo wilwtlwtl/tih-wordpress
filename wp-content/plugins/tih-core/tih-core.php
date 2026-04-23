@@ -24,6 +24,7 @@ foreach ( [
     'seo-meta',
     'recommendations',
     'test-data',
+    'seed-all-islands',
 ] as $file ) {
     require_once TIH_PLUGIN_DIR . 'includes/' . $file . '.php';
 }
