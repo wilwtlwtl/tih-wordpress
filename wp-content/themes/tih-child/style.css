@@ -96,3 +96,171 @@ Text Domain:  tih
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+/* ========================================
+   Category Archive
+======================================== */
+.tih-cat-hero {
+    padding: 3rem 1.5rem;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 0 var(--tih-radius) var(--tih-radius);
+    margin-bottom: 2rem;
+}
+.tih-cat-hero--spirits { background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%); }
+.tih-cat-hero--beauty  { background: linear-gradient(135deg, #c9a96e 0%, #a07840 100%); }
+.tih-cat-hero--gourmet { background: linear-gradient(135deg, var(--tih-forest) 0%, #1a3d2c 100%); }
+.tih-cat-hero--craft   { background: linear-gradient(135deg, var(--tih-ocean) 0%, #0d2e43 100%); }
+
+.tih-cat-hero__icon {
+    display: block;
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: .5rem;
+}
+.tih-cat-hero__title {
+    font-size: 2.2rem;
+    margin: 0 0 .6rem;
+    color: #fff;
+}
+.tih-cat-hero__tagline {
+    font-size: 1.05rem;
+    opacity: .9;
+    max-width: 600px;
+    margin: 0 auto .5rem;
+    font-style: italic;
+}
+.tih-cat-hero__desc {
+    font-size: .9rem;
+    opacity: .75;
+    max-width: 600px;
+    margin: .5rem auto 0;
+}
+
+.tih-cat-grid-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem 3rem;
+}
+.tih-cat-count {
+    font-size: .85rem;
+    color: #888;
+    margin: 0 0 1.25rem;
+}
+
+.tih-cat-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+@media (max-width: 480px) {
+    .tih-cat-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+}
+
+.tih-cat-card__link {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    border-radius: var(--tih-radius);
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,.08);
+    transition: box-shadow .2s, transform .2s;
+    height: 100%;
+}
+.tih-cat-card__link:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,.12);
+    transform: translateY(-2px);
+}
+
+.tih-cat-card__img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+}
+.tih-cat-card__placeholder {
+    width: 100%;
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    background: var(--tih-sand);
+}
+
+.tih-cat-card__body {
+    padding: .9rem;
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+    flex: 1;
+}
+.tih-cat-card__title {
+    font-size: .95rem;
+    margin: .25rem 0 0;
+    line-height: 1.35;
+}
+.tih-cat-card__island {
+    font-size: .78rem;
+    color: #777;
+}
+.tih-cat-card__kw {
+    font-size: 1.1rem;
+    color: var(--tih-lava);
+}
+.tih-cat-card__price {
+    font-size: .9rem;
+    font-weight: 700;
+    color: var(--tih-ocean);
+    margin-top: auto;
+}
+.tih-cat-card__read {
+    font-size: .82rem;
+    color: var(--tih-ocean);
+    font-weight: 600;
+    margin-top: auto;
+}
+
+.tih-pagination {
+    margin-top: 2.5rem;
+    text-align: center;
+}
+.tih-pagination .page-numbers {
+    list-style: none;
+    display: inline-flex;
+    gap: .5rem;
+    padding: 0;
+    margin: 0;
+}
+.tih-pagination .page-numbers li a,
+.tih-pagination .page-numbers li span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    min-height: 40px;
+    border-radius: 4px;
+    font-size: .9rem;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    color: var(--tih-ocean);
+    transition: background .15s;
+}
+.tih-pagination .page-numbers li .current {
+    background: var(--tih-ocean);
+    color: #fff;
+    border-color: var(--tih-ocean);
+}
+.tih-pagination .page-numbers li a:hover {
+    background: var(--tih-sand);
+}
+
+.tih-cat-empty {
+    text-align: center;
+    padding: 4rem 1rem;
+    color: #888;
+}
