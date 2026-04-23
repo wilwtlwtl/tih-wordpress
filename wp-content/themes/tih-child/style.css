@@ -1,0 +1,98 @@
+/*
+Theme Name:   Tokyo Island Heritage
+Theme URI:    https://tokyo-island-heritage.com
+Description:  Tokyo Island Heritage — volcanic island artisanal products directory
+Author:       TIH Team
+Template:     twentytwentyfour
+Version:      1.0.0
+Text Domain:  tih
+*/
+
+/* ========================================
+   Design Tokens
+======================================== */
+:root {
+    --tih-ocean:   #1a4a6b;
+    --tih-volcano: #c0392b;
+    --tih-sand:    #f5e6c8;
+    --tih-forest:  #2d6a4f;
+    --tih-lava:    #2c2c2c;
+    --tih-radius:  8px;
+}
+
+/* ========================================
+   Touch Targets (mobile-first: min 44x44px)
+======================================== */
+.tih-btn {
+    min-width:  44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1.25rem;
+    border-radius: var(--tih-radius);
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+/* ========================================
+   Category Badges
+======================================== */
+.tih-badge {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.tih-badge--spirits  { background: #2c2c2c; color: #fff; }
+.tih-badge--beauty   { background: #c9a96e; color: #fff; }
+.tih-badge--gourmet  { background: var(--tih-forest); color: #fff; }
+.tih-badge--craft    { background: var(--tih-ocean); color: #fff; }
+
+/* ========================================
+   Island Hero
+======================================== */
+.tih-island__hero img,
+.tih-product__hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--tih-radius);
+}
+
+.tih-island__header,
+.tih-product__header {
+    margin-bottom: 1.5rem;
+}
+
+.tih-island__kicker,
+.tih-product__category-badge {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+/* ========================================
+   Product/Island Grid Cards
+======================================== */
+.tih-island__products-grid,
+.tih-recommendations__grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+}
+
+@media (max-width: 480px) {
+    .tih-island__products-grid,
+    .tih-recommendations__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
