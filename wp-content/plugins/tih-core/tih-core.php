@@ -26,6 +26,7 @@ foreach ( [
     'test-data',
     'seed-all-islands',
     'seed-treasures',
+    'seed-how-to-buy',
 ] as $file ) {
     require_once TIH_PLUGIN_DIR . 'includes/' . $file . '.php';
 }
